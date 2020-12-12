@@ -1,0 +1,168 @@
+<html>
+    <head>
+        <title>Графы</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <script src="scripts/jquery-3.5.0.min.js"></script>
+        <script src="scripts/papaparse.min.js"></script>
+        <script src="scripts/plotly.min.js"></script>
+        <script src="scripts/bootstrap.bundle.min.js"></script>
+        <script src="scripts/bootstrap.bundle.js"></script>
+        <link rel = "stylesheet" href="scripts/bootstrap.min.css"/>
+        <script src="scripts/jquery-ui.min.js"></script>
+        <link rel = "stylesheet" href="scripts/jquery-ui.min.css"/>
+        <script
+            type="text/javascript"
+            src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+        ></script>
+        
+        <script src="plot.js"></script>
+        <link rel = "stylesheet" href="custom.css"/>
+    </head>
+
+    <body>
+        <!--<div id="back_container" class="background_animation">-->
+            <div class="container-fluid">
+                <!--            main            -->
+                <div class="container">
+                
+                    <!--            logo            -->
+                    <div class="row mx-auto justify-content-center">
+                        <h1>Графы</h1>
+                    </div>
+                    
+                    <!--            input frame            -->
+                    <div class="row">
+                        <div class="p-0 mx-auto">
+                            <!--            main input frame            -->
+                            <div class="shadow p-1 rounded bg-primary justify-content-center" id="maininput">
+                                <div class="row rounded p-1 m-1">
+                                    <div class="col-2 p-0 ml-0 my-auto h6 text-white"><label class="form-label align-items-center my-auto">Число вершин</label></div>
+                                    <div class="col-1 p-0 ml-0"><input class="form-control" type="text" placeholder="" id="nVertex"></div>
+                                    <div class="col-8 p-0 ml-1">
+                                        <button type="button" class="btn btn-outline-primary bg-light shadow" id="makeGraph">создать граф</button>
+                                        <button type="button" class="btn btn-outline-primary bg-light shadow" data-toggle="modal" data-target="#addArcModal">добавить дугу</button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="addArcModal" tabindex="-1" aria-labelledby="addArcModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="addArcModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-group">
+                                                          <label class="col-form-label">откуда:</label>
+                                                          <input type="text" class="form-control" id="addfrom">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">куда:</label>
+                                                            <input type="text" class="form-control" id="addto">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">вес:</label>
+                                                            <input type="text" class="form-control" id="addweight" value="1">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal" id="addArc">Добавить</button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-outline-primary bg-light shadow" data-toggle="modal" data-target="#removeArcModal">убрать дугу</button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="removeArcModal" tabindex="-1" aria-labelledby="removeArcModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="removeArcModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-group">
+                                                          <label class="col-form-label">откуда:</label>
+                                                          <input type="text" class="form-control" id="removefrom">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">куда:</label>
+                                                            <input type="text" class="form-control" id="removeto">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal" id="removeArc">Убрать</button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-outline-primary bg-light shadow" data-toggle="modal" data-target="#findPathModal">Найти путь</button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="findPathModal" tabindex="-1" aria-labelledby="findPathModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="findPathModalLabel">Найти путь алгоритмом Дейкстры</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-group">
+                                                          <label class="col-form-label">откуда:</label>
+                                                          <input type="text" class="form-control" id="findPathfrom">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">куда:</label>
+                                                            <input type="text" class="form-control" id="findPathto">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal" id="findPath">Найти</button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row rounded shadow p-1 m-2" style="background-color: white;">
+                                    <div class="col-12 p-0 m-0 square" id="graph">
+                                        <div id="mynetwork"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 code"></div>
+                </div>
+            </div>
+        <!--</div>-->
+
+        <!--            credits           -->
+        <div class="container-fluid" id="credits" style="position:absolute; bottom:0; width:100%;">
+            <div class="row">
+                <div class="col-12 bg-primary text-white"><h6 style="text-align:center; vertical-align: middle; height: 1.5em; margin-top: 0.5em;">
+                    Разработал Карачурин Рауль,
+                    студент группы Б19-501,
+                    2020 год.</h6></div>
+            </div>
+        </div>
+    
+    </body>
+</html>
