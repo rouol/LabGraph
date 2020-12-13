@@ -63,7 +63,7 @@ public:
 	int CountVertex() const override {
 		return this->nVertex;
 	}
-	void AddArc(int from, int to, int weight = 1) override {
+	void AddArc(int from, int to, int weight) override {
 		// check if can be arc
 		if ((0 <= from < this->nVertex) && (0 <= to < this->nVertex)) {
 			(*(this->AdjacencyMatrix))[from][to] = 1;
@@ -132,7 +132,7 @@ public:
 					cameFrom[goal] = current;
 					return reconstructPath(goal, cameFrom);
 				}
-				int newCost = costSoFar[current] + (*(this->WeightMatrix))[current][next];
+				int newCost = costSoFar[current] + this->WeightMatrix->Get(current).Get(next);
 				if ((cameFrom.count(next) == 0) || (newCost < costSoFar[next])) {
 					costSoFar[next] = newCost;
 					frontier.Enqueue(next, newCost);

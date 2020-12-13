@@ -43,7 +43,7 @@ int main()
         std::cin >> requestType;
         if (requestType == 1) {
             std::cin >> from >> to >> weight;
-            matrixGraph.AddArc(from, to);
+            matrixGraph.AddArc(from, to, weight);
         }
         else if (requestType == 2) {
             std::cin >> from >> to;

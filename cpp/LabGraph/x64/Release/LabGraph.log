@@ -68,8 +68,8 @@ C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(237): message : во в
           ]
 C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(243,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
   Создание кода
-  344 of 613 functions (56.1%) were compiled, the rest were copied from previous compilation.
-    74 functions were new in current compilation
-    71 functions had inline decision re-evaluated but remain unchanged
+  2 of 613 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
   LabGraph.vcxproj -> C:\Raul\programming\cpp\LabGraph\cpp\x64\Release\LabGraph.exe

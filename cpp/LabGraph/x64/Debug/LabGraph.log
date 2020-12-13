@@ -1,0 +1,70 @@
+﻿  main.cpp
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Graph.h(78,10): warning C4804: <: небезопасное использование типа "bool" в операции
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Graph.h(76): message : во время компиляции функции-члена класс шаблон "void MatrixGraph<int>::RemoveArc(int,int)"
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\main.cpp(50): message : выполняется компиляция ссылки на экземпляр шаблон функции "void MatrixGraph<int>::RemoveArc(int,int)"
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\main.cpp(38): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "MatrixGraph<int>"
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Graph.h(78,41): warning C4804: <: небезопасное использование типа "bool" в операции
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Graph.h(68,10): warning C4804: <: небезопасное использование типа "bool" в операции
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Graph.h(66): message : во время компиляции функции-члена класс шаблон "void MatrixGraph<int>::AddArc(int,int,int)"
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\main.cpp(46): message : выполняется компиляция ссылки на экземпляр шаблон функции "void MatrixGraph<int>::AddArc(int,int,int)"
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Graph.h(68,41): warning C4804: <: небезопасное использование типа "bool" в операции
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(131,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(125): message : во время компиляции функции-члена класс шаблон "Sequence<T> *ArraySequence<T>::Concat(Sequence<T> *)"
+          with
+          [
+              T=int
+          ]
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Graph.h(19): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "ArraySequence<int>"
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(113,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(109): message : во время компиляции функции-члена класс шаблон "Sequence<T> *ArraySequence<T>::GetSubSequence(const size_t,const size_t)"
+          with
+          [
+              T=int
+          ]
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(95,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(94): message : во время компиляции функции-члена класс шаблон "void ArraySequence<int>::InsertAt(T,const size_t)"
+          with
+          [
+              T=int
+          ]
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(128): message : выполняется компиляция ссылки на экземпляр шаблон функции "void ArraySequence<int>::InsertAt(T,const size_t)"
+          with
+          [
+              T=int
+          ]
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(85,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(84): message : во время компиляции функции-члена класс шаблон "void ArraySequence<int>::Prepend(T)"
+          with
+          [
+              T=int
+          ]
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Graph.h(110,1): warning C4267: аргумент: преобразование из "size_t" в "T"; возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Graph.h(105): message : во время компиляции функции-члена класс шаблон "ArraySequence<int> MatrixGraph<int>::NeighborVertexs(int) const"
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Graph.h(128): message : выполняется компиляция ссылки на экземпляр шаблон функции "ArraySequence<int> MatrixGraph<int>::NeighborVertexs(int) const"
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(255,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(249): message : во время компиляции функции-члена класс шаблон "Sequence<T> *LinkedListSequence<T>::Concat(Sequence<T> *)"
+          with
+          [
+              T=Item<int>
+          ]
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\PriorityQueue.h(74): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "LinkedListSequence<Item<T>>"
+          with
+          [
+              T=int
+          ]
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\PriorityQueue.h(73): message : во время компиляции функции-члена класс шаблон "PriorityQueue<int>::~PriorityQueue(void)"
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Graph.h(116): message : выполняется компиляция ссылки на экземпляр шаблон функции "PriorityQueue<int>::~PriorityQueue(void)"
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Graph.h(116): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "PriorityQueue<int>"
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Graph.h(151): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "MatrixGraph<T>"
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(238,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(237): message : во время компиляции функции-члена класс шаблон "Sequence<T> *LinkedListSequence<T>::GetSubSequence(const size_t,const size_t)"
+          with
+          [
+              T=Item<int>
+          ]
+C:\Raul\programming\cpp\LabGraph\cpp\LabGraph\Sequence.h(243,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  LabGraph.vcxproj -> C:\Raul\programming\cpp\LabGraph\cpp\x64\Debug\LabGraph.exe
